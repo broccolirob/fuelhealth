@@ -20,7 +20,7 @@
                                 <span class="glyphicon glyphicon-ok pull-right"></span>
                             {% endif %}
                         </li>
-                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }}</p>
+                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }} | <a href="{% url 'article_detail' article.id %}">Comments</a></p>
                             <hr>
                         {% endfor %}
                     </ol>

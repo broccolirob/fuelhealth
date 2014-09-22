@@ -21,6 +21,13 @@ class Article(models.Model):
         return "{}".format(self.title)
 
 
-# class Comment(models.Model):
-#     article = models.ForeignKey(Article, related_name='comments')
-#     body = models.TextField()
+class Comment(models.Model):
+    article = models.ForeignKey(Article, related_name='comments')
+    body = models.TextField()
+    author = models.ForeignKey(User, related_name='comments_made')
+    points = models.IntegerField(default=1)
+    voters = models.ManyToManyField(User, related_name='liked_comments')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return "In {}, by {}".format(self.article, self.author)

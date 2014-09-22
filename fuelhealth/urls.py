@@ -6,6 +6,7 @@ urlpatterns = patterns('',
     url(r'^vote/$', 'apps.news.views.vote', name='vote'),
     url(r'^new/', 'apps.news.views.new', name='new'),
     url(r'^articles/$', 'apps.news.views.user_articles', name='user_articles'),
+    url(r'^article/(?P<article_id>\w+)/$', 'apps.news.views.article_detail', name='article_detail'),
     url(r'^article/(?P<article_id>\w+)/delete', 'apps.news.views.delete_article', name='delete_article'),
     url(r'^search/', include('haystack.urls')),
 

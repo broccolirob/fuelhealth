@@ -2,8 +2,8 @@ from django.contrib.auth.decorators import login_required
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from apps.news.models import Article
-from apps.news.forms import ArticleForm, ArticleSearchForm, RegistrationForm
+from apps.news.models import Article, Comment
+from apps.news.forms import ArticleForm, ArticleSearchForm, RegistrationForm, CommentForm
 from apps.news.utils import top_articles
 
 
@@ -77,6 +77,25 @@ def user_articles(request):
     user_articles = user.moderated_articles.all()
     data = {'user_articles': user_articles}
     return render(request, 'user_articles.html', data)
+
+
+def article_detail(request, article_id):
+    article = Article.objects.get(pk=article_id)
+    new_comments = Comment.objects.filter(article_id=article_id).order_by("-created_at")
+    top_comments = Comment.objects.filter(article_id=article_id).order_by("points")
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = Comment.objects.create(article=article,
+                                             body=form.cleaned_data['body'],
+                                             author=request.user,
+                                             points=1)
+            comment.save()
+            return redirect('article_detail', article_id)
+    else:
+        form = CommentForm()
+    data = {'article': article, 'new_comments': new_comments, 'top_comments': top_comments, 'form': form}
+    return render(request, 'article_detail.html', data)
 
 
 def delete_article(request, article_id):
