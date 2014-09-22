@@ -6,7 +6,10 @@
     </div>
     <div class="col-lg-9">
         {% if query %}
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h5><span class="glyphicon glyphicon-search"></span> Search Results for: {{ query }}</h5>
+                </div>
                 <div class="panel-body">
 
                     {% for result in page.object_list %}

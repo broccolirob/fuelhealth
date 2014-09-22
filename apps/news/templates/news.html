@@ -6,7 +6,10 @@
             {% include "includes/create_article.html" %}
         </div>
         <div class="col-lg-9">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h5><span class="glyphicon glyphicon-list"></span> Article List</h5>
+                </div>
                 <div class="panel-body">
                     <ol>
                         {% for article in article_list %}
