@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 
 import os
+from urlparse import urlparse
 
 # BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -49,14 +50,21 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
+
+port = es.port or 80
+
 
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'https://3mdq6wd3:d9dzowd3p8cb2s2t@fig-7190030.us-east-1.bonsai.io:443/',
-        'INDEX_NAME': 'haystack',
+        'URL': es.scheme + '://' + es.hostname + ':' + str(port),
+        'INDEX_NAME': 'documents',
     },
 }
+
+if es.username:
+    HAYSTACK_CONNECTIONS['default']['KWARGS'] = {"http_auth": es.username + ':' + es.password}
 
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
