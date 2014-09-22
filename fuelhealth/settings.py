@@ -55,7 +55,7 @@ INSTALLED_APPS = (
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
+        'URL': 'https://3mdq6wd3:d9dzowd3p8cb2s2t@fig-7190030.us-east-1.bonsai.io:443/',
         'INDEX_NAME': 'haystack',
     },
 }
