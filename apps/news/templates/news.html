@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-3">
+            {% include "includes/create_article.html" %}
+        </div>
+        <div class="col-lg-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ol>
+                        {% for article in article_list %}
+                        <li><a href="{{ article.url }}">{{ article }}</a> ({{ article.domain }})
+                            {% if article not in user.liked_articles.all %}
+                                <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up pull-right"></span></a>
+                            {% else %}
+                                <span class="glyphicon glyphicon-ok pull-right"></span>
+                            {% endif %}
+                        </li>
+                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }}</p>
+                            <hr>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

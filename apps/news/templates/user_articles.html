@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+
+    </div>
+    <div class="col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol>
+                {% for article in user_articles %}
+                    <li><a href="{{ article.url }}">{{ article.title }}</a> ({{ article.domain }})
+                        <a href="{% url 'delete_article' article.id %}"><span class="glyphicon glyphicon-remove pull-right"></span></a></li>
+                    <p>{{ article.points }} points on {{ article.created_at }}</p>
+                    <hr>
+                {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

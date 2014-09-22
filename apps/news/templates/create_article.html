@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+    <h1>Submit a new article</h1>
+    <form method="post" role="form">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+            {{ field.errors }}
+            {{ field.help_text }}
+            <label>{{ field.label }}</label>
+            {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" value="Add Link" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

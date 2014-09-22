@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form method="post" role="form">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.errors }}
+                {{ field.help_text }}
+                <label for="id_{{ field.label }}">{{ field.label }}:</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" value="Add Link" class="btn btn-primary">
+                <span class="glyphicon glyphicon-link"></span> Add Link</button>
+        </form>
+    </div>
+</div>
