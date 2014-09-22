@@ -110,5 +110,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-MANDRILL_API_KEY = "1QcCAQfV9A9YsFHnv38Jtw"
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
