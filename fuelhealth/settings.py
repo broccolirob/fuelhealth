@@ -10,33 +10,17 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-ALLOWED_HOSTS = ['*']
-
 
 import os
-try:
-    from local_settings import *
-except ImportError:
-    pass
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 TEMPLATE_DIRS = [(os.path.join(BASE_DIR, 'apps/news/templates')), ]
 
 LOGIN_REDIRECT_URL = 'index'
-
-STATIC_ROOT = 'staticfiles'
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 # Quick-start development settings - unsuitable for production
@@ -49,8 +33,6 @@ SECRET_KEY = ')e(j7+a=u+m(-l*6^u3etxk09ir2a34=a@n+2uql@+rg*42%fh'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,3 +108,23 @@ USE_TZ = True
 
 
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+
+import dj_database_url
+
+# DATABASES['default'] = dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),)
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
