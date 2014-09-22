@@ -18,7 +18,7 @@ def index(request):
                 user = request.user
                 user.liked_articles.add(article)
                 user.save()
-                return redirect('index')
+                return redirect('new')
         else:
             form = ArticleForm()
         data = {'article_list': top_articles(), 'user': user, 'form': form}

@@ -22,7 +22,7 @@
     <favorites_list name="fuelhealth" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5043653">
+    <splitter split-orientation="horizontal" split-proportion="0.5043616">
       <split-first>
         <leaf>
           <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
@@ -63,19 +63,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="search.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="search.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/apps/news/templates/search/search.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="20" selection-start="373" selection-end="373" vertical-scroll-proportion="0.36263737" vertical-offset="0" max-vertical-offset="675">
+                <state line="11" column="20" selection-start="373" selection-end="373" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="675">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+                <state line="2" column="17" selection-start="24" selection-end="24" vertical-scroll-proportion="0.04137931" vertical-offset="0" max-vertical-offset="725">
                   <folding />
                 </state>
               </provider>
@@ -84,7 +84,7 @@
           <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/fuelhealth/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="3" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1770">
+                <state line="37" column="37" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="349" max-vertical-offset="1995">
                   <folding />
                 </state>
               </provider>
@@ -106,7 +106,7 @@
           <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/apps/news/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="36" selection-start="2796" selection-end="2796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+                <state line="21" column="13" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
                   <folding />
                 </state>
               </provider>
@@ -115,7 +115,25 @@
           <file leaf-file-name="user_articles.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/apps/news/templates/user_articles.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="26" selection-start="91" selection-end="91" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
+                <state line="10" column="41" selection-start="254" selection-end="254" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="465">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Procfile" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Procfile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="42" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="requirements.txt" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/requirements.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
                   <folding />
                 </state>
               </provider>
@@ -147,7 +165,7 @@
           <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="47" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+                <state line="2" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
                   <folding />
                 </state>
               </provider>
@@ -156,16 +174,16 @@
           <file leaf-file-name="news.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="570">
+                <state line="11" column="22" selection-start="404" selection-end="404" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="570">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="create_article.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="create_article.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/apps/news/templates/includes/create_article.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="49" selection-start="115" selection-end="115" vertical-scroll-proportion="0.069767445" vertical-offset="0" max-vertical-offset="430">
+                <state line="2" column="49" selection-start="115" selection-end="115" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="375">
                   <folding />
                 </state>
               </provider>
@@ -204,15 +222,16 @@
         <option value="$PROJECT_DIR$/apps/news/forms.py" />
         <option value="$PROJECT_DIR$/apps/news/templates/base.html" />
         <option value="$PROJECT_DIR$/fuelhealth/urls.py" />
-        <option value="$PROJECT_DIR$/apps/news/views.py" />
         <option value="$PROJECT_DIR$/apps/news/models.py" />
-        <option value="$PROJECT_DIR$/apps/news/templates/user_articles.html" />
         <option value="$PROJECT_DIR$/variables.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/fuelhealth/settings.py" />
-        <option value="$PROJECT_DIR$/apps/news/templates/news.html" />
         <option value="$PROJECT_DIR$/apps/news/templates/includes/create_article.html" />
         <option value="$PROJECT_DIR$/apps/news/templates/search/search.html" />
+        <option value="$PROJECT_DIR$/apps/news/views.py" />
+        <option value="$PROJECT_DIR$/apps/news/templates/news.html" />
+        <option value="$PROJECT_DIR$/apps/news/templates/user_articles.html" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/fuelhealth/settings.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -292,72 +311,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuelhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -637,7 +590,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29871795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29871795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -668,6 +621,7 @@
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.rb" />
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -687,11 +641,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/news/search_indexes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="77" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="300" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="585">
@@ -971,20 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="47" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/user_articles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="91" selection-end="91" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="0" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
@@ -992,44 +927,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuelhealth/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="3" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="36" selection-start="2796" selection-end="2796" vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/templates/includes/create_article.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="49" selection-start="115" selection-end="115" vertical-scroll-proportion="0.069767445" vertical-offset="0" max-vertical-offset="430">
+        <state line="2" column="49" selection-start="115" selection-end="115" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/templates/search/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="373" selection-end="373" vertical-scroll-proportion="0.36263737" vertical-offset="0" max-vertical-offset="675">
+        <state line="11" column="20" selection-start="373" selection-end="373" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="404" selection-end="404" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/user_articles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="41" selection-start="254" selection-end="254" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="42" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuelhealth/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="37" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="349" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="24" selection-end="24" vertical-scroll-proportion="0.04137931" vertical-offset="0" max-vertical-offset="725">
           <folding />
         </state>
       </provider>
