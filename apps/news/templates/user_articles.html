@@ -25,6 +25,15 @@
                     <hr>
                 {% endfor %}
                 </ul>
+                <ul class="pager">
+                    {% if user_articles.has_previous %}
+                        <li class="previous"><a href="?page={{ user_articles.previous_page_number }}">&larr; Previous</a></li>
+                    {% endif %}
+
+                    {% if user_articles.has_next %}
+                        <li class="next"><a href="?page={{ user_articles.next_page_number }}">Next &rarr;</a></li>
+                    {% endif %}
+                </ul>
                 {% else %}
                 <h5>You haven't submitted any articles yet.</h5>
                 {% endif %}

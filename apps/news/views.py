@@ -89,15 +89,31 @@ def register(request):
 
 def user_articles(request):
     user = request.user
-    user_articles = user.moderated_articles.all()
-    data = {'user_articles': user_articles}
+    article_list = user.moderated_articles.all()
+    paginator = Paginator(article_list, 10)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+    data = {'user_articles': articles}
     return render(request, 'user_articles.html', data)
 
 
 def user_comments(request):
     user = request.user
     user_comments = user.comments_made.all()
-    data = {'user_comments': user_comments}
+    paginator = Paginator(user_comments, 10)
+    page = request.GET.get('page')
+    try:
+        comments = paginator.page(page)
+    except PageNotAnInteger:
+        comments = paginator.page(1)
+    except EmptyPage:
+        comments = paginator.page(paginator.num_pages)
+    data = {'user_comments': comments}
     return render(request, 'user_comments.html', data)
 
 
