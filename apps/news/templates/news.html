@@ -20,7 +20,7 @@
                                 <span class="glyphicon glyphicon-ok pull-right" style="color:orange;"></span>
                             {% endif %}
                         </li>
-                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }}
+                            <p><span id="points-{{ article.id }}" class="points">{{ article.points }}</span> points by {{ article.moderator }} at {{ article.created_at }}
                                 <a class="btn btn-default btn-xs" href="{% url 'article_detail' article.id %}">Comments {% if article.comments.all.count > 0 %}({{ article.comments.all.count }}){% endif %}</a></p>
                             <hr>
                         {% endfor %}
