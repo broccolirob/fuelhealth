@@ -17,10 +17,11 @@
                             {% if article not in user.liked_articles.all %}
                                 <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up pull-right"></span></a>
                             {% else %}
-                                <span class="glyphicon glyphicon-ok pull-right"></span>
+                                <span class="glyphicon glyphicon-ok pull-right" style="color:orange;"></span>
                             {% endif %}
                         </li>
-                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }} | <a href="{% url 'article_detail' article.id %}">Comments</a></p>
+                            <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }}
+                                <a class="btn btn-default btn-xs" href="{% url 'article_detail' article.id %}">Comments {% if article.comments.all.count > 0 %}({{ article.comments.all.count }}){% endif %}</a></p>
                             <hr>
                         {% endfor %}
                     </ul>

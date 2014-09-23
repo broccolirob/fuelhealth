@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ user.username|capfirst }}'s Comments | {% endblock %}
+
 {% block content %}
 <div class="row">
     <div class="col-lg-3">
-
+        <div class="list-group">
+            <a class="list-group-item" href="{% url 'user_articles' %}">Articles</a>
+            <a class="list-group-item" href="{% url 'user_comments' %}">Comments</a>
+        </div>
     </div>
     <div class="col-lg-9">
         <div class="panel panel-primary">
@@ -12,10 +17,11 @@
             </div>
             <div class="panel-body">
                 {% if user_comments %}
-                <ul>
+                <ul style="list-style: none;">
                 {% for comment in user_comments %}
-                    <h3>{{ comment.article }}</h3>
-                    <p>{{ comment.body }}<a href="{% url 'delete_comment' comment.id %}"><span class="glyphicon glyphicon-remove pull-right"></span></a></p>
+                    <li><a href="{{ comment.article.url }}">{{ comment.article }}</a> ({{ comment.article.domain }})
+                        <a href="{% url 'delete_comment' comment.id %}"><span class="glyphicon glyphicon-remove pull-right"></span></a></li>
+                    <p>{{ comment.body }}</p>
                     <hr>
                 {% endfor %}
                 </ul>
