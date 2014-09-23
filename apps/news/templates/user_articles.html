@@ -11,6 +11,7 @@
                 <h5>{{ user.username|capfirst }}'s Articles</h5>
             </div>
             <div class="panel-body">
+                {% if user_articles %}
                 <ol>
                 {% for article in user_articles %}
                     <li><a href="{{ article.url }}">{{ article.title }}</a> ({{ article.domain }})
@@ -19,6 +20,9 @@
                     <hr>
                 {% endfor %}
                 </ol>
+                {% else %}
+                <h5>You haven't submitted any articles yet.</h5>
+                {% endif %}
             </div>
         </div>
     </div>

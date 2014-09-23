@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+
+    </div>
+    <div class="col-lg-9">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h5>{{ user.username|capfirst }}'s Comments</h5>
+            </div>
+            <div class="panel-body">
+                {% if user_comments %}
+                <ul>
+                {% for comment in user_comments %}
+                    <h3>{{ comment.article }}</h3>
+                    <p>{{ comment.body }}<a href="{% url 'delete_comment' comment.id %}"><span class="glyphicon glyphicon-remove pull-right"></span></a></p>
+                    <hr>
+                {% endfor %}
+                </ul>
+                {% else %}
+                <h5>You haven't commented on any articles yet.</h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -11,7 +11,7 @@
                     <h5><span class="glyphicon glyphicon-list"></span> Article List</h5>
                 </div>
                 <div class="panel-body">
-                    <ol>
+                    <ul style="list-style: none;">
                         {% for article in article_list %}
                         <li><a href="{{ article.url }}">{{ article }}</a> ({{ article.domain }})
                             {% if article not in user.liked_articles.all %}
@@ -23,7 +23,16 @@
                             <p>{{ article.points }} points by {{ article.moderator }} at {{ article.created_at }} | <a href="{% url 'article_detail' article.id %}">Comments</a></p>
                             <hr>
                         {% endfor %}
-                    </ol>
+                    </ul>
+                    <ul class="pager">
+                        {% if article_list.has_previous %}
+                            <li class="previous"><a href="?page={{ article_list.previous_page_number }}">&larr; Previous</a></li>
+                        {% endif %}
+
+                        {% if article_list.has_next %}
+                            <li class="next"><a href="?page={{ article_list.next_page_number }}">Next &rarr;</a></li>
+                        {% endif %}
+                    </ul>
                 </div>
             </div>
         </div>

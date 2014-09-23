@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.news.models import Article, Comment
 from apps.news.forms import ArticleForm, ArticleSearchForm, RegistrationForm, CommentForm
@@ -8,26 +9,41 @@ from apps.news.utils import top_articles
 
 
 def index(request):
-        user = request.user
-        if request.method == 'POST':
-            form = ArticleForm(request.POST)
-            if form.is_valid():
-                article = form.save(commit=False)
-                article.moderator = request.user
-                article.save()
-                user = request.user
-                user.liked_articles.add(article)
-                user.save()
-                return redirect('new')
-        else:
-            form = ArticleForm()
-        data = {'article_list': top_articles(), 'user': user, 'form': form}
-        return render(request, 'news.html', data)
+    article_list = top_articles()
+    paginator = Paginator(article_list, 10)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.moderator = request.user
+            article.save()
+            user = request.user
+            user.liked_articles.add(article)
+            user.save()
+            return redirect('new')
+    else:
+        form = ArticleForm()
+    data = {'article_list': articles, 'form': form}
+    return render(request, 'news.html', data)
 
 
 def new(request):
-    user = request.user
-    articles = Article.objects.all().order_by('-created_at')
+    article_list = Article.objects.all().order_by('-created_at')
+    paginator = Paginator(article_list, 10)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
     if request.method == 'POST':
             form = ArticleForm(request.POST)
             if form.is_valid():
@@ -40,7 +56,7 @@ def new(request):
                 return redirect('index')
     else:
         form = ArticleForm()
-    return render(request, 'news.html', {'article_list': articles, 'user': user, 'form': form})
+    return render(request, 'news.html', {'article_list': articles,'form': form})
 
 
 def article_search(request):
@@ -72,11 +88,17 @@ def register(request):
 
 
 def user_articles(request):
-    # user = User.objects.get(pk=user_id)
     user = request.user
     user_articles = user.moderated_articles.all()
     data = {'user_articles': user_articles}
     return render(request, 'user_articles.html', data)
+
+
+def user_comments(request):
+    user = request.user
+    user_comments = user.comments_made.all()
+    data = {'user_comments': user_comments}
+    return render(request, 'user_comments.html', data)
 
 
 def article_detail(request, article_id):
@@ -102,3 +124,9 @@ def delete_article(request, article_id):
     article = Article.objects.get(pk=article_id)
     article.delete()
     return redirect('user_articles')
+
+
+def delete_comment(request, comment_id):
+    comment = Comment.objects.get(pk=comment_id)
+    comment.delete()
+    return redirect('user_comments')
