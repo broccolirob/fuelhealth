@@ -19,7 +19,7 @@
                 {% if user_comments %}
                 <ul style="list-style: none;">
                 {% for comment in user_comments %}
-                    <li><a href="{{ comment.article.url }}">{{ comment.article }}</a> ({{ comment.article.domain }})
+                    <li><a href="{% url 'article_detail' comment.article.id %}">{{ comment.article }}</a> ({{ comment.article.domain }})
                         <a href="{% url 'delete_comment' comment.id %}"><span class="glyphicon glyphicon-remove pull-right"></span></a></li>
                     <p>{{ comment.body }}</p>
                     <hr>

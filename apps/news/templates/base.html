@@ -1,8 +1,12 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <title>{% block title %}{% endblock %}FuelHealth</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="{% static 'img/flame.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
@@ -10,6 +14,14 @@
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/vote.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 
 </head>
 <body>
