@@ -28,8 +28,8 @@ function vote (article_id) {
         url: "/vote/",
         data: {"article": article_id},
         success: function() {
-            $("#article-vote-" + article_id).replaceWith("<span class='glyphicon glyphicon-ok pull-right'></span>");
-            $("#article-title-" + article_id).css({"margin-left": "15px"});
+            $("#article-vote-" + article_id).replaceWith("<span class='glyphicon glyphicon-ok pull-right' style='color:orange;'></span>");
+            $("#points-" + article_id).replaceWith("-");
         },
         headers: {
             'X-CSRFToken': csrftoken
