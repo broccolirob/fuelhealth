@@ -3,6 +3,19 @@
 {% block content %}
 <div class="row">
     <div class="col-lg-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h5>Refine Your Search</h5>
+            </div>
+            <div class="panel-body">
+                <form method="get" action="/search" role="search">
+                    <div class="form-group">
+                        <input type="search" class="form-control search-query" name="q" placeholder="Search articles" />
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-lg-9">
         {% if query %}
@@ -13,12 +26,11 @@
                 <div class="panel-body">
 
                     {% for result in page.object_list %}
-                        <ol>
-        {#                    <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>#}
+                        <ul style="list-style: none;">
                             <li><a href="{{ result.object.url }}">{{ result.object.title }}</a> ({{ result.object.domain }})</li>
                             <p>{{ result.object.points }} by {{ result.object.moderator }} at {{ result.object.created_at }}</p>
                             <hr>
-                        </ol>
+                        </ul>
                     {% empty %}
                         <h1>No results found.</h1>
                     {% endfor %}

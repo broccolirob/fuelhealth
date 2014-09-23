@@ -22,57 +22,78 @@
     <favorites_list name="fuelhealth" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/news/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="6" selection-start="62" selection-end="62" vertical-scroll-proportion="0.084269665" vertical-offset="0" max-vertical-offset="1260">
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_comments.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/news/templates/user_comments.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="24" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="600">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article_detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/news/templates/article_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="47" selection-start="2237" selection-end="2237" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="1095">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="22" selection-start="2067" selection-end="2067" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="720">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+                  <folding>
+                    <element signature="e#0#51#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/apps/news/templates/base.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="8" selection-start="1969" selection-end="2310" vertical-scroll-proportion="-11.833333" vertical-offset="421" max-vertical-offset="1260">
+                  <folding>
+                    <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="search.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/apps/news/templates/search/search.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="26" column="0" selection-start="999" selection-end="999" vertical-scroll-proportion="0.25440314" vertical-offset="260" max-vertical-offset="855">
+                  <folding>
+                    <element signature="e#1085#1110#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user_comments.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/apps/news/templates/user_comments.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="24" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="600">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="article_detail.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/apps/news/templates/article_detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="70" selection-start="300" selection-end="300" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1095">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="news.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="13" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.36380598" vertical-offset="0" max-vertical-offset="720">
+                  <folding>
+                    <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -96,7 +117,6 @@
         <option value="$PROJECT_DIR$/apps/news/static/js/vote.js" />
         <option value="$PROJECT_DIR$/apps/news/templates/registration/password_reset_form.html" />
         <option value="$PROJECT_DIR$/variables.py" />
-        <option value="$PROJECT_DIR$/apps/news/templates/search/search.html" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/fuelhealth/wsgi.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -115,8 +135,9 @@
         <option value="$PROJECT_DIR$/fuelhealth/urls.py" />
         <option value="$PROJECT_DIR$/apps/news/templates/news.html" />
         <option value="$PROJECT_DIR$/apps/news/templates/user_comments.html" />
-        <option value="$PROJECT_DIR$/apps/news/templates/article_detail.html" />
         <option value="$PROJECT_DIR$/apps/news/templates/base.html" />
+        <option value="$PROJECT_DIR$/apps/news/templates/article_detail.html" />
+        <option value="$PROJECT_DIR$/apps/news/templates/search/search.html" />
       </list>
     </option>
   </component>
@@ -235,6 +256,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuelhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuelhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -516,7 +563,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22948718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22692308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -649,7 +696,9 @@
     <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="105" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="360">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/static/js/vote.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="75" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.40357852" vertical-offset="232" max-vertical-offset="735" />
@@ -727,13 +769,6 @@
           <folding>
             <marker date="1411160477581" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/search/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="675">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,19 +941,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="109" selection-end="109" vertical-scroll-proportion="0.10968921" vertical-offset="0" max-vertical-offset="547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fuelhealth/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="22" selection-start="2067" selection-end="2067" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="720">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,18 +964,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="8" selection-start="1969" selection-end="2310" vertical-scroll-proportion="-11.833333" vertical-offset="421" max-vertical-offset="1260">
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/news/templates/article_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="47" selection-start="2237" selection-end="2237" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="1095">
+        <state line="9" column="70" selection-start="300" selection-end="300" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1095">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="6" selection-start="62" selection-end="62" vertical-scroll-proportion="0.084269665" vertical-offset="0" max-vertical-offset="1260">
+        <state line="13" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.36380598" vertical-offset="0" max-vertical-offset="720">
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templates/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="999" selection-end="999" vertical-scroll-proportion="0.25440314" vertical-offset="260" max-vertical-offset="855">
+          <folding>
+            <element signature="e#1085#1110#0" expanded="true" />
           </folding>
         </state>
       </provider>
