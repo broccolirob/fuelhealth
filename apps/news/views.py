@@ -64,6 +64,7 @@ def article_search(request):
     articles = form.search()
     return render(request, 'article_search.html', {'articles': articles})
 
+
 @login_required
 def vote(request):
     article = get_object_or_404(Article, pk=request.POST.get('article'))

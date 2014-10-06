@@ -11,20 +11,38 @@
                     <h5><span class="glyphicon glyphicon-list"></span> Article List</h5>
                 </div>
                 <div class="panel-body">
-                    <ul style="list-style: none;">
-                        {% for article in article_list %}
-                        <li><a href="{{ article.url }}">{{ article }}</a> ({{ article.domain }})
+                    {% for article in article_list %}
+                    <div class="row">
+                        <div class="col-xs-1">
                             {% if article not in user.liked_articles.all %}
-                                <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up pull-right"></span></a>
+                                <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up"></span></a>
                             {% else %}
-                                <span class="glyphicon glyphicon-ok pull-right" style="color:orange;"></span>
+                                <span class="glyphicon glyphicon-ok" style="color:orange; text-align: center;"></span>
                             {% endif %}
-                        </li>
-                            <p><span id="points-{{ article.id }}" class="points">{{ article.points }}</span> points by {{ article.moderator }} at {{ article.created_at }}
+                        </div>
+                        <div class="col-xs-11">
+                        <p><a href="{{ article.url }}">{{ article }}</a> ({{ article.domain }})</p>
+                            <p><span id="points-{{ article.id }}" class="points" >{{ article.points }}</span> points by {{ article.moderator }} at {{ article.created_at }}
                                 <a class="btn btn-default btn-xs" href="{% url 'article_detail' article.id %}">Comments {% if article.comments.all.count > 0 %}({{ article.comments.all.count }}){% endif %}</a></p>
                             <hr>
-                        {% endfor %}
-                    </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+{#                    <ul style="list-style: none;">#}
+{#                        {% for article in article_list %}#}
+{#                        <p><a href="{{ article.url }}">{{ article }}</a> ({{ article.domain }})#}
+{#                            {% if article not in user.liked_articles.all %}#}
+{#                                <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up pull-right"></span></a>#}
+{#                            {% else %}#}
+{#                                <span class="glyphicon glyphicon-ok pull-right" style="color:orange;"></span>#}
+{#                            {% endif %}#}
+{#                        </p>#}
+{#                            <p><span id="points-{{ article.id }}" class="points" data-points="{{ article.points }}"><span class="new">show</span></span> points by {{ article.moderator }} at {{ article.created_at }}#}
+{#                                <a class="btn btn-default btn-xs" href="{% url 'article_detail' article.id %}">Comments {% if article.comments.all.count > 0 %}({{ article.comments.all.count }}){% endif %}</a></p>#}
+{#                            <hr>#}
+{#                        {% endfor %}#}
+{#                    </ul>#}
                     <ul class="pager">
                         {% if article_list.has_previous %}
                             <li class="previous"><a href="?page={{ article_list.previous_page_number }}">&larr; Previous</a></li>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="{% static 'img/flame.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/readable.css' %}">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/vote.js' %}"></script>
@@ -17,9 +17,14 @@
     <style>
         body {
             font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: url('../static/img/greyzz.png') repeat;
         }
         a:hover {
             text-decoration: none;
+        }
+        .panel {
+            box-shadow: 0 0 7px #888888;
+            border: none;
         }
     </style>
 
@@ -75,5 +80,7 @@
     {% block content %}
     {% endblock %}
 </div>
+    <script src="{% static 'js/points.js' %}"></script>
+
 </body>
 </html>
