@@ -7,7 +7,7 @@ from apps.accounts.models import Profile
 from apps.news.models import Article, Comment
 from haystack.forms import SearchForm
 
-
+# This form looks the same as the built in django one?
 class AuthenticationForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
@@ -23,6 +23,7 @@ class AuthenticationForm(forms.Form):
         return self.cleaned_data
 
 
+# Any of these auth related forms are probably better suited to be in a forms.py in your account app
 class RegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Frist Name'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}))
