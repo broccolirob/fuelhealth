@@ -5,3 +5,6 @@ local_settings.py
 .idea/
 
 staticfiles
+
+# Need to remove your existing .idea/ folder
+# django-messages should just be in your requirements.txt, it should not be in your project
