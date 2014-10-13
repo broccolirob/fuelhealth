@@ -38,6 +38,9 @@
                         <ul class="media-list">
                         {% for comment in new_comments %}
                             <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" height="64" width="64" src="{{ comment.author.profile_pic.url }}">
+                                </a>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ comment.author }}</h5>
                                     <p>{{ comment.body }}</p>
@@ -51,6 +54,9 @@
                         <ul class="media-list">
                         {% for comment in top_comments %}
                             <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" height="64" width="64" src="{{ comment.author.profile_pic.url }}">
+                                </a>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ comment.author }}</h5>
                                     <p>{{ comment.body }}</p>

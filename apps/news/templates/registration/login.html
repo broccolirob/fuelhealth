@@ -1,23 +1,45 @@
-{% extends 'base.html' %}
-
-{% block title %}Login | {% endblock %}
-
-{% block content %}
-<div class="row">
-    <div class="col-lg-6">
-    <h1>Login</h1>
-        <form role="form" id="login_form" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="input-username">Username:</label>
-            <input type="text" class="form-control" placeholder="Username" name="username" value="" size="50" />
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block title %}Login | {% endblock %}#}
+{##}
+{#{% block content %}#}
+{#<div class="row">#}
+{#    <div class="col-lg-6">#}
+{#    <h1>Login</h1>#}
+{#        <form role="form" id="login_form" method="post">#}
+{#        {% csrf_token %}#}
+{#        <div class="form-group">#}
+{#            <label for="input-username">Username:</label>#}
+{#            <input type="text" class="form-control" placeholder="Username" name="username" value="" size="50" />#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#            <label for="input-password">Password:</label>#}
+{#            <input type="password" class="form-control" placeholder="Password" name="password" value="" size="50" />#}
+{#        </div>#}
+{#        <button type="submit" value="login" class="btn btn-primary">Login</button>#}
+{#    </form>#}
+{#    </div>#}
+{#</div>#}
+{#{% endblock %}#}
+        <div class="modal-content">
+            <form role="form" action="{% url 'login' %}" id="login_form" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In Form</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="input-username">Username:</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-password">Password:</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" value="login" class="btn btn-primary">Login</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="input-password">Password:</label>
-            <input type="password" class="form-control" placeholder="Password" name="password" value="" size="50" />
-        </div>
-        <button type="submit" value="login" class="btn btn-primary">Login</button>
-    </form>
-    </div>
-</div>
-{% endblock %}

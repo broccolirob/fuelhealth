@@ -1,15 +1,33 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
+
+
+
+{% block news-active %}class="active"{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-lg-3">
-            {% include "includes/create_article.html" %}
+            {% if user.profile_pic %}
+            <div class="well" style="background-color: #ffffff; text-align: center;">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        {% thumbnail user.profile_pic "64x64" as pic %}
+                        <img class="media-object" src="{{ pic.url }}">
+                        {% endthumbnail %}
+                    </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">{{ user.first_name }} {{ user.last_name }}</h5>
+                        Points: {{ user.points }} <br> Rank: 1
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+                <button type="button" id="add-link" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-link pull-left"></span><strong>Add a Link</strong></button>
         </div>
         <div class="col-lg-9">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h5><span class="glyphicon glyphicon-list"></span> Article List</h5>
-                </div>
+
+                    <div class="panel panel-primary">
                 <div class="panel-body">
                     {% for article in article_list %}
                     <div class="row">
@@ -17,14 +35,17 @@
                             {% if article not in user.liked_articles.all %}
                                 <a href="{% url 'vote' %}" id="article-vote-{{ article.id }}" class="vote"><span class="glyphicon glyphicon-chevron-up"></span></a>
                             {% else %}
-                                <span class="glyphicon glyphicon-chevron-up"></span>
+                                <span class="glyphicon glyphicon-ok" style="color: orange;"></span>
                             {% endif %}
                         </div>
-                        <div class="col-xs-11">
-                        <p><a href="{{ article.url }}" target="_blank">{{ article }}</a> ({{ article.domain }})</p>
-                            <p><span id="points-{{ article.id }}" class="points" >{{ article.points }}</span> points by {{ article.moderator }} at {{ article.created_at }}
-                                <a class="btn btn-default btn-xs" href="{% url 'article_detail' article.id %}">Comments {% if article.comments.all.count > 0 %}({{ article.comments.all.count }}){% endif %}</a></p>
+                        <div class="col-xs-10">
+                        <p><a href="{{ article.url }}" target="_blank"><strong>{{ article }}</strong></a> ({{ article.domain }})</p>
+                            <span id="points-{{ article.id }}" class="points" >{{ article.points }}</span> points by {{ article.moderator }} at {{ article.created_at }}
+                                <a href="{% url 'article_detail' article.id %}">Comment{% if article.comments.all.count > 0 %}s</a> <span class="badge">{{ article.comments.all.count }}</span>{% endif %}
                             <hr>
+                        </div>
+                        <div class="col-xs-1">
+                            <a href="#"><span class="glyphicon glyphicon-flag pull-right" style="font-size: 70%"></span></a>
                         </div>
                     </div>
                     {% endfor %}
@@ -41,5 +62,6 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
 

@@ -1,0 +1,57 @@
+
+{#<ol>#}
+{#    {% for user in user_list %}#}
+{#        <li>{{ user.first_name }} {{ user.last_name }}</li>#}
+{#    {% endfor %}#}
+{#</ol>#}
+
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+
+
+{% block rankings-active %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-3">
+            {% if user.profile_pic %}
+            <div class="well" style="background-color: #ffffff; text-align: center;">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        {% thumbnail user.profile_pic "64x64" as pic %}
+                        <img class="media-object" src="{{ pic.url }}">
+                        {% endthumbnail %}
+                    </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">{{ user.first_name }} {{ user.last_name }}</h5>
+                        Points: {{ user.points }} <br> Rank: 1
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-lg-9">
+        <div class="row">
+            {% for user in user_list %}
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                <p><span class="pull-left">Rank: </span><span class="pull-right">{{ user.points }} pts</span></p>
+                </div>
+                                <hr class="ranking-header">
+
+                {% thumbnail user.profile_pic "300x300" as pic %}
+              <img class="img-thumbnail" src="http://placekitten.com/g/200/300" alt="">
+                {% endthumbnail %}
+              <div class="caption">
+                <h5 style="text-align: center;">{{ user.first_name }} {{ user.last_name }}</h5>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+
+        </div>
+    </div>
+{% endblock %}

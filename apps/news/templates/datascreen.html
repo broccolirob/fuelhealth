@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% load staticfiles %}
+
+{% block css %}
+<style>
+path {
+    stroke: steelblue;
+    stroke-width: 1;
+    fill: none;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: lightgrey;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+</style>
+{% endblock %}
+
+{% block data-active %}class='active'{% endblock %}
+
+{% block content %}
+
+<div class="row">
+        <div class="col-lg-3">
+            {% if user.profile_pic %}
+            <div class="well" style="background-color: #ffffff; text-align: center;">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        {% thumbnail user.profile_pic "64x64" as pic %}
+                        <img class="media-object" src="{{ pic.url }}">
+                        {% endthumbnail %}
+                    </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">{{ user.first_name }} {{ user.last_name }}</h5>
+                        Points: {{ user.points }} <br> Rank: 1
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+                <img id='connect-health-data-btn' src='https://connect.humanapi.co/assets/button/blue.png'/>
+        </div>
+        <div class="col-lg-9">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                     <div id="graph" class="aGraph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+var connectBtn = document.getElementById('connect-health-data-btn');
+connectBtn.addEventListener('click', function(e) {
+  var opts = {
+    // grab this from the app settings page
+    clientId: 'aa263c5c6116f4ca89e5b7d1ba788bc73f12ad28',
+    // can be email or any other internal id of the user in your system
+    clientUserId: '{{ user.username }}',
+    finish: function(err, sessionTokenObject) {
+      // When user finishes health data connection to your app
+      // `finish` function will be called.
+      // `sessionTokenObject` object will have several fields in it.
+      // You need to pass this `sessionTokenObject` object to your server
+      // add `CLIENT_SECRET` to it and send `POST` request to the `https://user.humanapi.co/v1/connect/tokens` endpoint.
+      // In return you will get `accessToken` for that user that can be used to query Human API.
+    },
+    close: function() {
+      // do something here when user just closed popup
+      // `close` callback function is optional
+    }
+  }
+  HumanConnect.open(opts);
+});
+</script>
+<script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+<script src="{% static 'js/data.js' %}"></script>
+{% endblock %}

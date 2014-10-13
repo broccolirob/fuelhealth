@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block title %}{{ user.username|capfirst }}'s Articles | {% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-lg-3">
+        {% if user.profile_pic %}
+            <div class="well" style="background-color: #ffffff; text-align: center;">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        {% thumbnail user.profile_pic "64x64" as pic %}
+                        <img class="media-object" src="{{ pic.url }}">
+                        {% endthumbnail %}
+                    </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">{{ user.first_name }} {{ user.last_name }}</h5>
+                        Points: {{ user.points }} <br> Rank: 1
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         <div class="list-group">
             <a class="list-group-item" href="{% url 'user_articles' %}">Articles</a>
             <a class="list-group-item" href="{% url 'user_comments' %}">Comments</a>

@@ -27,7 +27,7 @@ function vote (article_id) {
         type: "POST",
         url: "/vote/",
         data: {"article": article_id},
-        success: function() {
+        success: function(data) {
             $("#article-vote-" + article_id).replaceWith("<span class='glyphicon glyphicon-ok' style='color:orange;'></span>");
             $("#points-" + article_id).replaceWith("-");
         },

@@ -28,4 +28,19 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
+        migrations.CreateModel(
+            name='Comment',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('body', models.TextField()),
+                ('points', models.IntegerField(default=1)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('article', models.ForeignKey(related_name=b'comments', to='news.Article')),
+                ('author', models.ForeignKey(related_name=b'comments_made', to=settings.AUTH_USER_MODEL)),
+                ('voters', models.ManyToManyField(related_name=b'liked_comments', to=settings.AUTH_USER_MODEL)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
     ]

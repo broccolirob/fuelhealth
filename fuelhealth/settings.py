@@ -15,13 +15,23 @@ import os
 from urlparse import urlparse
 
 # BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 TEMPLATE_DIRS = [(os.path.join(BASE_DIR, 'apps/news/templates')), ]
 
-LOGIN_REDIRECT_URL = 'index'
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", *MEDIA_URL.strip("/").split("/"))
+
+
+LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'accounts.Profile'
 
 
 # Quick-start development settings - unsuitable for production
@@ -35,19 +45,22 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-
 # Application definition
 
 INSTALLED_APPS = (
+    'sorl.thumbnail',
     'djrill',
     'haystack',
     'apps.news',
+    'apps.accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_messages',
+    'apps.talent',
 )
 
 es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
@@ -108,9 +121,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# SORL-THUMBNAIL CONFIG
+#####################################
+THUMBNAIL_DEBUG = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
 
 
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"

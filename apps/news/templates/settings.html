@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username|capfirst }}'s Settings | {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <div class="list-group">
+            <a class="list-group-item" href="{% url 'settings' user.id %}">Settings</a>
+            <a class="list-group-item" href="{% url 'user_articles' %}">Articles</a>
+            <a class="list-group-item" href="{% url 'user_comments' %}">Comments</a>
+            <a class="list-group-item" href="{% url 'messages_inbox' %}">Messages</a>
+        </div>
+    </div>
+        <div class="col-lg-9">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Inbox</button>
+              <button type="button" class="btn btn-default">Outbox</button>
+              <button type="button" class="btn btn-default">Trash</button>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h5>{{ user.username|capfirst }}'s Settings</h5>
+                </div>
+                <div class="panel-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="form-group">
+                            {{ field }}
+                        </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary" value="edit settings">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

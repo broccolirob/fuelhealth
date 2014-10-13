@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load thumbnail %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,25 +13,39 @@
     <link rel="shortcut icon" href="{% static 'img/flame.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/readable.css' %}">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src='https://connect.humanapi.co/connect.js'></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/vote.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block css %}
+    {% endblock %}
     <style>
         body {
             font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: url('../static/img/sos.png') repeat;
+            background: url('{% static 'img/sos.png' %}') repeat;
         }
         a:hover {
             text-decoration: none;
         }
-        .panel {
+        .panel, .well {
             box-shadow: 0 0 7px #888888;
             border: none;
+        }
+        .ranking-header {
+            margin: 5px;
+        }
+        #add-link {
+            background-color: orange;
+            border: none;
+            box-shadow: 0 0 7px #888888;
+        }
+        #add-link:hover {
+            background-color: #4582ec;
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation" style="border-top-color:#4582ec; border-top-style:solid; border-top-width:3px;">
+<nav class="navbar navbar-default" role="navigation" style="border-bottom-color:#4582ec; border-bottom-style:solid; border-bottom-width:3px;">
   <div class="container">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,8 +62,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{% url 'index' %}">Top</a></li>
-        <li><a href="{% url 'new' %}">New</a></li>
+        <li {% block news-active %}{% endblock %}><a href="{% url 'index' %}">News</a></li>
+{#        <li {% block new-active %}{% endblock %}><a href="{% url 'new' %}">New</a></li>#}
+        <li {% block data-active %}{% endblock %}><a href="{% url 'data' %}">Data</a></li>
+        <li {% block rankings-active %}{% endblock %}><a href="{% url 'rankings' %}">Rankings</a></li>
       </ul>
         <form class="navbar-form navbar-left" method="get" action="/search" role="search">
             <div class="form-group">
@@ -57,18 +75,22 @@
         </form>
       <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
+        <li><a href="#"><span class="glyphicon glyphicon-comment"></span> <span style="color: orange;">!</span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell"></span> <span style="color: orange;">!</span></a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>  {{ user.username|capfirst }} <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ user.username|capfirst }} <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
+                <li><a href="{% url 'settings' user.id %}">Settings</a></li>
                 <li><a href="{% url 'user_articles' %}">Articles</a></li>
                 <li><a href="{% url 'user_comments' %}">Comments</a></li>
+                <li><a href="#">Favorites</a></li>
                 <li class="divider"></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
         </li>
           {% else %}
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
           {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -76,10 +98,94 @@
   </div>
 </nav>
 <div class="container">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span></button>{{ message }}
+        </div>
+    {% endfor %}
     {% block content %}
     {% endblock %}
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" action="{% url 'signin' %}" id="login_form" method="POST">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In Form</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="input-username">Username:</label>
+                        <input id="input-username" type="text" class="form-control" placeholder="Username" name="username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-password">Password:</label>
+                        <input id="input-password" type="password" class="form-control" placeholder="Password" name="password" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" value="login" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include 'linkmodal.html' %}
+
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" action="{% url 'register' %}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registration Form</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="input-first_name">First Name:</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" value="" size="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-last_name">Last Name:</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="" size="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-username">Username:</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="" size="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-password1">Password:</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password1" value="" size="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-password2">Confirm Password:</label>
+                        <input type="password" class="form-control" placeholder="Confirm Password" name="password2" value="" size="50" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" value="Register" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 </div>
     <script src="{% static 'js/points.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+    <script src="{% static 'js/addlink.js' %}"></script>
+{#    <script src="{% static 'js/data.js' %}"></script>#}
+
+    {% block js %}
+    {% endblock %}
 
 </body>
 </html>

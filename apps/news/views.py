@@ -1,11 +1,16 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.news.models import Article, Comment
 from apps.news.forms import ArticleForm, ArticleSearchForm, RegistrationForm, CommentForm
 from apps.news.utils import top_articles
+
+
+def data(request):
+    return render(request, 'datascreen.html')
 
 
 def index(request):
@@ -28,6 +33,8 @@ def index(request):
             user.liked_articles.add(article)
             user.save()
             return redirect('new')
+        else:
+            messages.error(request, "Something went wrong with your submission, please try again.")
     else:
         form = ArticleForm()
     data = {'article_list': articles, 'form': form}
@@ -65,7 +72,7 @@ def article_search(request):
     return render(request, 'article_search.html', {'articles': articles})
 
 
-@login_required
+@login_required()
 def vote(request):
     article = get_object_or_404(Article, pk=request.POST.get('article'))
     article.points += 1
@@ -73,15 +80,15 @@ def vote(request):
     user = request.user
     user.liked_articles.add(article)
     user.save()
-    return redirect('index')
+    return HttpResponse()
 
 
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            if form.save():
-                return redirect('login')
+            form.save()
+            return redirect('login')
     else:
         form = RegistrationForm()
     data = {'form': form}
@@ -117,7 +124,7 @@ def user_comments(request):
     data = {'user_comments': comments}
     return render(request, 'user_comments.html', data)
 
-
+@login_required
 def article_detail(request, article_id):
     article = Article.objects.get(pk=article_id)
     new_comments = Comment.objects.filter(article_id=article_id).order_by("-created_at")
