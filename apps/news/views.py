@@ -13,6 +13,8 @@ def data(request):
     return render(request, 'datascreen.html')
 
 
+# The same pagination code is used in many views. You could make this DRYer by creating a function
+# which takes in the paginator and returns the queryset
 def index(request):
     article_list = top_articles()
     paginator = Paginator(article_list, 10)
@@ -26,6 +28,9 @@ def index(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
+            # This form saving code for your ArticleForm is also repeated in multiple views
+            # You could move this into the save() of the form and also pass in request.user
+            # so it can handle liking the article.
             article = form.save(commit=False)
             article.moderator = request.user
             article.save()
@@ -42,7 +47,7 @@ def index(request):
 
 
 def new(request):
-    article_list = Article.objects.all().order_by('-created_at')
+    article_list = Article.objects.order_by('-created_at')
     paginator = Paginator(article_list, 10)
     page = request.GET.get('page')
     try:
@@ -77,6 +82,7 @@ def vote(request):
     article = get_object_or_404(Article, pk=request.POST.get('article'))
     article.points += 1
     article.save()
+    # You may want to just make a method on your Profile model called like_article(article) for you to reuse.
     user = request.user
     user.liked_articles.add(article)
     user.save()
@@ -127,6 +133,7 @@ def user_comments(request):
 @login_required
 def article_detail(request, article_id):
     article = Article.objects.get(pk=article_id)
+    # can't you just get comments from the article? article.comments.order_by("-created_at")
     new_comments = Comment.objects.filter(article_id=article_id).order_by("-created_at")
     top_comments = Comment.objects.filter(article_id=article_id).order_by("points")
     if request.method == 'POST':
@@ -144,6 +151,7 @@ def article_detail(request, article_id):
     return render(request, 'article_detail.html', data)
 
 
+# Will need try/excepts on these incase a bad ID is sent up
 def delete_article(request, article_id):
     article = Article.objects.get(pk=article_id)
     article.delete()
