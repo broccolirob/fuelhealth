@@ -20,7 +20,7 @@ class Article(models.Model):
         return urlparse(self.url).netloc
 
     def __unicode__(self):
-        return "{}".format(self.title)
+        return u"{}".format(self.title)
 
 
 class Comment(models.Model):
@@ -33,4 +33,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return "In {}, by {}".format(self.article, self.author)
+        return u"In {}, by {}".format(self.article, self.author)
